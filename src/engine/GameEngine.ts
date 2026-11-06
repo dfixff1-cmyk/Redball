@@ -798,6 +798,10 @@ export class GameEngine {
    *  - score 1200: ~0.82 (speed ~590 px/s, spawn interval ~0.85s)
    *  - score 2000+: 1.0 (speed ~650 px/s, spawn interval ~0.65s)
    */
+  public getObstaclesDodged(): number {
+    return this.obstaclesDodgedThisRun;
+  }
+
   public getScoreDifficulty(): number {
     // Primary score curve: smooth logarithmic progression from 0 to 2200 score
     const scoreFactor = Math.min(1.0, Math.log10(1 + this.score / 200) / Math.log10(1 + 2200 / 200));
